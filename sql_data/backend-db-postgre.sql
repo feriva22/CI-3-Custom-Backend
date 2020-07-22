@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS "staffgroup";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "staffgroup" (
-  "sdg_id" int NOT NULL,
+  "sdg_id" SERIAL NOT NULL,
   "sdg_name" varchar(45) DEFAULT NULL,
   "sdg_desc" varchar(45) DEFAULT NULL,
   "sdg_status" smallint DEFAULT NULL,
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS "module";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "module" (
-  "mdl_id" int NOT NULL,
+  "mdl_id" SERIAL NOT NULL,
   "mdl_name" varchar(45) DEFAULT NULL,
   "mdl_desc" varchar(45) DEFAULT NULL,
   "mdl_relativeurl" varchar(45) DEFAULT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE "module" (
 
 
 /*!40000 ALTER TABLE "module" DISABLE KEYS */;
-INSERT INTO "module" VALUES (1,'konfigurasi','','konfigurasi',0),(2,'staff','','staff',1);
+INSERT INTO "module" VALUES (2,'staff','','staff',1);
 /*!40000 ALTER TABLE "module" ENABLE KEYS */;
 
 
@@ -86,7 +86,7 @@ DROP TABLE IF EXISTS "moduleaccess";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "moduleaccess" (
-  "mda_id" int NOT NULL,
+  "mda_id" SERIAL NOT NULL,
   "mda_staffgroup" int NOT NULL,
   "mda_module" int NOT NULL,
   "mda_create" smallint DEFAULT 0,
@@ -119,7 +119,7 @@ DROP TABLE IF EXISTS "modulemenu";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "modulemenu" (
-  "mdm_id" int NOT NULL,
+  "mdm_id" SERIAL NOT NULL,
   "mdm_title" varchar(45) DEFAULT NULL,
   "mdm_url" varchar(45) DEFAULT NULL,
   "mdm_staffgroup" varchar(255) DEFAULT NULL,
@@ -150,7 +150,7 @@ DROP TABLE IF EXISTS "staff";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "staff" (
-  "stf_id" int NOT NULL,
+  "stf_id" SERIAL NOT NULL,
   "stf_name" varchar(45) DEFAULT NULL,
   "stf_username" varchar(45) DEFAULT NULL,
   "stf_email" varchar(255) DEFAULT NULL,
@@ -208,7 +208,7 @@ DROP TABLE IF EXISTS "stafflog";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE "stafflog" (
-  "sdl_id" int NOT NULL,
+  "sdl_id" SERIAL NOT NULL,
   "sdl_module" varchar(45) DEFAULT NULL,
   "sdl_action" varchar(45) DEFAULT NULL,
   "sdl_staff" varchar(45) DEFAULT NULL,
